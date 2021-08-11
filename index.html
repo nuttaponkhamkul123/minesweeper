@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">'
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+       <h1>Minesweeper</h1> 
+       <div class="table">
+        
+
+
+       </div>
+        
+        <h1>Bomb total : <i id="bombtotal"></i></h1>
+    <script>
+        let bombTotal = 5;
+        let bomb = [ "A" , "B" ];
+        let table = document.getElementsByClassName("table");
+        
+        document.getElementById("bombtotal").innerHTML = bombTotal;
+        
+        for( let i = 0 ; i < 5 ; i++){
+            for( let j = 0 ; j < 5 ;j++){
+                let randVal = bomb[Math.floor(Math.random() * bomb.length)];
+        
+    
+                if (randVal == "B"){
+                    if(bombTotal > 0){
+                        bombTotal--;
+                        
+                        table[0].innerHTML += "<div class = " + '"block"'+">" + randVal + "</div>";
+                    }else{
+                        
+                        table[0].innerHTML += "<div class = " + '"block"'+">" + bomb[0] + "</div>";
+                    }
+                    
+                }else{
+                    table[0].innerHTML += "<div class = " + '"block"'+">" + bomb[0] + "</div>";
+                }
+            }
+
+        }
+
+        document.getElementById("bombtotal").innerHTML = bombTotal;
+        
+    </script>
+    <style>
+        #bombtotal{
+            color:green;
+        }
+    </style>
+        
+</body>
+</html>
