@@ -2,8 +2,7 @@
     display:inline;
     border: 2px solid black;
 }
-.table{
+#table{
     display:grid;
-    grid-template-columns: repeat(5,50px);
-    grid-template-rows: repeat(5,50px);
+    
 }
